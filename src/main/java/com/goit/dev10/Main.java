@@ -12,7 +12,7 @@ public class Main {
       Transaction transaction = session.beginTransaction();
       session.persist(new Person("test"));
       transaction.commit();
-      for (Person person : findAllStudentsWithJpql(session)) {
+      for (Person person : findAllPersons(session)) {
         transaction.rollback();
         System.out.println(person);
       }
@@ -22,7 +22,7 @@ public class Main {
     }
   }
 
-  public static List<Person> findAllStudentsWithJpql(Session session) {
+  private  static  List<Person> findAllPersons(Session session) {
     return session.createQuery("SELECT a FROM Person a", Person.class).getResultList();
   }
 }
