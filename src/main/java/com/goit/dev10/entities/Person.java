@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-
+//TODO: Add email
 @Entity
 @Table(name = "person")
 @Data
